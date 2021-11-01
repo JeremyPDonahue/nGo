@@ -14,3 +14,6 @@ pip install playsound
 Future Plans:
 Add user interface
 Add specific workout programs
+
+Commits:
+WV = working version
