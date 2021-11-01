@@ -1,7 +1,7 @@
 import sys
 import time
 import set_parameters
-from playsound import playsound
+import play_clip
 
 def beginWorkout():
 
@@ -10,9 +10,7 @@ def beginWorkout():
     rest = int(parameters[1])
     interval = int(parameters[2])
 
-    playsound("audio/Get_Ready.wav")
-    playsound("audio/mario.wav")
-    playsound("audio/Begin.wav")
+    play_clip.begin()
 
     mins = int(workout)
     secs = 0
@@ -33,7 +31,7 @@ def beginWorkout():
                 secs -= 1
                 if secs == 0:
                     print("\n\nComplete!\n")
-                    playsound("audio/mario.wav")
+                    play_clip.complete()
 
             if mins == 1:
                 if secs == 0:
@@ -52,7 +50,7 @@ def beginWorkout():
 
             if (switch == interval):
 
-                playsound('audio/Rest.wav')
+                play_clip.rest()
 
                 print("\n\nRest\n")
                 countDown = rest
@@ -70,7 +68,7 @@ def beginWorkout():
                             sys.stdout.write("\r{rest}".format(rest=countDown))
                             sys.stdout.flush()
                             print("\n\nBegin\n")
-                            playsound('audio/Begin.wav')
+                            play_clip.intervalStart()
 
                     except KeyboardInterrupt:
                         break
