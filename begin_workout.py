@@ -2,13 +2,20 @@ import sys
 import time
 import set_parameters
 import play_clip
+import workouts
 
 def beginWorkout():
 
-    parameters = set_parameters.setParameters()
-    workout = int(parameters[0])
-    rest = int(parameters[1])
-    interval = int(parameters[2])
+    workoutRoutine = workouts.loadWorkOut(sys.argv[1])
+
+    if workoutRoutine == []:
+        parameters = set_parameters.setParameters()
+    else:
+        parameters = workoutRoutine
+
+    workout = parameters[0]
+    rest = parameters[1]
+    interval = parameters[2]
 
     play_clip.begin()
 
