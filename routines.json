@@ -1,0 +1,27 @@
+{
+"routines": {
+    "wakeup": {
+        "settings": {
+            "duration": "5",
+            "rest": "1",
+            "interval": "30"
+        },
+        "exercises": {
+            "exercise_1": "knee ups",
+            "exercise_2": "jumping jacks"
+        }
+    },
+    "push_power": {
+        "settings": {
+            "duration": "6",
+            "rest": "20",
+            "interval": "30" 
+        },
+        "exercises": {
+            "exercise_1": "standard push ups",
+            "exercise_2": "wide push ups",
+            "exercise_3": "narrow push ups"
+        }
+    }
+}
+}
