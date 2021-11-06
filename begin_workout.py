@@ -8,10 +8,13 @@ def beginWorkout():
 
     workoutRoutine = workouts.loadWorkOut(sys.argv[1])
 
-    if workoutRoutine == []:
+    if workoutRoutine == [0,0,0]:
         parameters = set_parameters.setParameters()
     else:
         parameters = workoutRoutine
+        print("You will workout for " + str(workoutRoutine[0]) + " minutes!")
+        print("Each interval will last for " + str(workoutRoutine[2]) + " seconds")
+        print("You will rest for " + str(workoutRoutine[1]) + " seconds between sets")
 
     workout = parameters[0]
     rest = parameters[1]
